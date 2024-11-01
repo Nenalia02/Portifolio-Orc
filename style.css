@@ -1,0 +1,541 @@
+@font-face {
+  font-family: 'winter' ;
+  src: url('Fontes/Winter\ is\ coming.otf') format(opentype); 
+}
+
+@font-face {
+  font-family: 'montsserrat' ;
+  src: url('Fontes/Montserrat-Regular.ttf') format(truetype); 
+}
+
+/*Animação de pulsar*/
+
+@keyframes pulsar {
+  0%, 100% {
+      transform: scale(1); /* Tamanho original */
+  }
+  50% {
+      transform: scale(1.1); /* Aumenta o tamanho no meio da animação */
+  }
+}
+
+/*Animação de girar*/
+
+@keyframes girar {
+  0% {
+      transform: rotate(0deg); /* Início da animação */
+  }
+  50% {
+      transform: rotate(180deg); /* Meio da animação */
+  }
+  100% {
+      transform: rotate(360deg); /* Fim da animação */
+  }
+}
+
+/*Animação de flutuar*/
+
+@keyframes flutuar {
+  0% {
+      transform: translateY(0); /* Posição inicial */
+  }
+  50% {
+      transform: translateY(-20px); /* Move para cima */
+  }
+  100% {
+      transform: translateY(0); /* Retorna à posição inicial */
+  }
+}
+
+/*Animação de balançar*/
+
+@keyframes balancar {
+  0%, 100% {
+      transform: rotate(10deg); /* Inclina para um lado */
+  }
+  50% {
+      transform: rotate(-10deg); /* Inclina para o outro lado */
+  }
+}
+
+/*Animação de balançar levement*/
+
+@keyframes balancar-levemente {
+  0%, 100% {
+      transform: rotate(2deg); /* Inclina para um lado */
+  }
+  50% {
+      transform: rotate(-2deg); /* Inclina para o outro lado */
+  }
+}
+
+/*Responsividade (Bastante confusa por sinal)*/
+
+@media screen and (min-width: 950px) {
+  #projetos > div {
+      flex-direction: row;
+  }
+  .circular-img {
+      width: 210px;
+      height: 210px;
+  }
+  .disc > .circular-img {
+      width: 150px;
+      height: 150px;
+  }
+  .disc {
+      width: 250px;
+      height: 250px;
+  }
+  #habilidades > div {
+      flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 950px) and (min-width: 700px){
+  #projetos > div {
+      flex-direction: row;
+  }
+  .circular-img {
+      width: 150px;
+      height: 150px;
+  }
+  .disc > .circular-img {
+      width: 90px;
+      height: 90px;
+  }
+  .disc {
+      width: 190px;
+      height: 190px;
+  }
+  #habilidades > div {
+      flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  header > nav > ul {
+      display: none;
+  }
+  #projetos > div {
+      flex-direction: column;
+  }
+  #images_container {
+      display: none;
+  }
+  .circular-img {
+      width: 210px;
+      height: 210px;
+  }
+  .disc > .circular-img {
+      width: 150px;
+      height: 150px;
+  }
+  .disc {
+      width: 250px;
+      height: 250px;
+  }
+  #habilidades > div {
+      flex-direction: column;
+  }
+}
+
+/*Corpo do html*/
+
+body {
+  background: linear-gradient(0deg, #F2DEF7 0%, #F2DEF7 100%);
+  margin: 0;
+  padding: 0;
+}
+
+/*Cabeçalho*/
+
+header {
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(
+  180deg,
+  rgba(131, 65, 136, 0.91) 0%,
+  rgba(197, 167, 205, 0.91) 100%
+);
+  padding: 10px 40px 0px 40px;
+  margin: 0;
+  position: fixed;
+  z-index: 10;
+}
+
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+}
+
+nav > ul > li > a {
+  color: white;
+  text-decoration: none;
+  font-family: 'montsserrat';
+}
+
+nav > ul > li:hover > a {
+  text-decoration: underline;
+  color: #834188;
+}
+
+ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+nav > h1 {
+  color: #ffffff;
+  font-family: 'winter';
+  width: max-content;
+  text-align: left;
+  font-size: larger;
+}
+
+/*Sobre mim*/
+
+#sobre-mim {
+  padding-top: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+/*Lado esquerdo da sessão sobre mim*/
+
+#text_container{
+  min-width: 400px;
+  max-width: 700;
+  margin: auto;
+}
+
+
+#text_container > p {
+  font-family: 'montsserrat';
+  color: #834188;
+  text-align: justify;
+  width: 750px;
+  top: 328px;
+  left: 77px;
+  font-size: large;
+}
+
+#text_container > h2 {
+  font-family: 'winter';
+  color: #834188;
+  text-align: left;
+  width: 394px;
+  top: 159px;
+  left: 77px;
+  font-weight: 400;
+  font-size: xx-large;
+}
+
+/*Lado direito da sessão sobre mim*/
+
+#lorena {
+  background-image: url(Imagens/Lorena.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 640px;
+  margin: auto;
+  margin-top: 70px;
+  margin-bottom: 60px;
+  animation: balancar-levemente 5s ease-in-out infinite;
+}
+
+#mittens {
+  background-image: url(Imagens/Mittens.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 340px;
+  left: -100px;
+  width: 200px;
+  height: 200px;
+  animation: flutuar 1.75s ease-in-out infinite;
+}
+
+#luz {
+  background-image: url(Imagens/Luz.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 125px;
+  left: 35px;
+  width: 180px;
+  height: 180px;
+  animation: flutuar 1.5s ease-in-out infinite;
+}
+
+#teclado {
+  background-image: url(Imagens/Teclado.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  top: -430px;
+  left: 250px;
+  width: 165px;
+  height: 165px;
+  animation: balancar 1s ease-in-out infinite;
+}
+
+#gatinho {
+  background-image: url(Imagens/Gatinho.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  top: -186px;
+  left: 270px;
+  width: 200px;
+  height: 200px;
+  animation: pulsar 1s infinite;
+}
+
+#PC {
+  background-image: url(Imagens/PC.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  top: -850px;
+  left: -60px;
+  width: 300px;
+  height: 300px;
+  animation: flutuar 2s ease-in-out infinite;
+}
+
+#TS4 {
+  background-image: url(Imagens/TS4.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  top: -800px;
+  left: 340px;
+  width: 125px;
+  height: 125px;
+  animation: girar 2s infinite;
+}
+
+
+/*Sessão de habilidades*/
+
+#habilidades {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#habilidades > div {
+  display: flex;
+  justify-content: center;
+}
+
+#habilidades > div > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  max-width: 700px;
+  justify-content: center;
+}
+
+#habilidades > div > div > ul {
+  font-family: 'montsserrat';
+  color: #834188;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+#habilidades > div > div > h2 {
+  font-family: 'winter';
+  color: #834188;
+}
+
+#mickey {
+  background-image: url(Imagens/Mickey.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  animation: flutuar 5.25s ease-in-out infinite;
+}
+
+#escudo-link {
+  background-image: url(Imagens/Escudo_Link.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-top: 20px;
+  animation: flutuar 5s ease-in-out infinite;
+}
+
+/*Sessão de hobbies e projetos*/
+
+#projetos {
+  font-family: 'winter';
+  color: #834188;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#projetos h2{
+  text-decoration-line: line-through;
+}
+
+#projetos > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#great {
+  background-image: url(Imagens/Great.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#amigurumi {
+  background-image: url(Imagens/Amigurumi.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#livro {
+  background-image: url(Imagens/Livro.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#traitor {
+  background-image: url(Imagens/Traitor.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.circular-img {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  animation: pulsar 2s infinite;
+}
+
+.disc > .circular-img {
+  margin: auto;
+}
+
+.disc {
+  background-image: url(Imagens/Gif_Disco.gif);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  animation: pulsar 2s infinite;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/*Sessão de contatos*/
+
+footer {
+  background: linear-gradient(
+  180deg,
+  rgba(131, 65, 136, 0.91) 0%,
+  rgba(197, 167, 205, 0.91) 100%
+);
+  padding: 10px 40px 10px 40px;
+}
+
+footer > div {
+  margin: auto;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+}
+
+
+footer > div > div {
+  width: 50px;
+  height: 50px;
+}
+
+#github {
+  background-image: url(https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#linkedin {
+  background-image: url(https://img.icons8.com/?size=100&id=8808&format=png&color=FFFFFF);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#gmail {
+  background-image: url(https://img.icons8.com/?size=100&id=Y2GfpkgYNp42&format=png&color=FFFFFF);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+}
+
+/*Configuração globais*/
+
+h2, h1 {
+  width: auto;
+  text-align: center;
+}
+
+ul {
+  font-family: 'montsserrat';
+  list-style-type: none;
+}
+
+hr {
+  background: linear-gradient(
+  180deg,
+  rgba(131, 65, 136, 0.91) 0%,
+  rgba(197, 167, 205, 0.91) 100%
+);
+  height: 80px;
+  width: 100%;
+}
